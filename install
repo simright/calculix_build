@@ -6,6 +6,11 @@
 echo "==========Calculix Build==========="
 echo "==========Calculix 2.11============"
 echo "==================================="
+echo "+Try to fix requirement?(Suggest after compile faild)\n+(yes/no)"
+read fix_requirement
+if [ $fix_requirement = "yes" ]; then
+    sudo apt-get install gfortran freeglut3-dev libxmu-dev libxmu-headers libxi-dev
+fi
 echo "+Download PDF and other documents?\n+(yes/no)"
 read download_documents
 echo "+Remove all download file after compile?\n+(yes/no)"
