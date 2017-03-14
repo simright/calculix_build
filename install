@@ -3,9 +3,9 @@
 # You must run this in ~/build_calculix (hard coded in the ARPACK patch)
 # You will need gcc-fortran, cpio, freeglut, glu
 
-echo "==========Calculix Build==========="
-echo "==========Calculix 2.11============"
-echo "==================================="
+echo "==========Calculix Build==Tweak by: HibernantBear========="
+echo "=================================Calculix 2.11============"
+echo "=========================================================="
 echo "+Try to fix requirement?(Suggest after compile faild)\n+(yes/no)"
 read fix_requirement
 if [ $fix_requirement = "yes" ]; then
