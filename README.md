@@ -1,14 +1,15 @@
-# calculix_build
+# This is for building Calculix locally
 
-Makefiles to build SPOOLES, ARPACK and CalculiX. The scripts automatically pull the software from internet, builds the software and installs it locally. 
+## install SPOOLES
+./install_install_spooles
 
-The script can be run anywhere after downloading:
+## install ARPACK
+./install_ARPACK
 
-git clone https://github.com/robhuls/calculix_build.git
+## build Calculix ccx
+```
+cd ccx/src
+make
+```
 
-cd calculix_build/
 
-
-And will install in ~/calculix. The installation is started with
-
-./install

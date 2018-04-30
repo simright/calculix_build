@@ -1,0 +1,30 @@
+#!/bin/sh
+
+export PROGSDIR=$HOME/Calculix
+
+mkdir -p $PROGSDIR
+mkdir -p $PROGSDIR/bin
+mkdir -p $PROGSDIR/lib
+mkdir -p $PROGSDIR/include
+ 
+# Spooles as solver for CCX
+#wget -c --tries=1000000 http://www.netlib.org/linalg/spooles/spooles.2.2.tgz
+mkdir -p SPOOLES.2.2
+cp spooles.2.2.tgz SPOOLES.2.2
+cd SPOOLES.2.2
+tar xzf spooles.2.2.tgz
+patch ./Tree/src/makeGlobalLib ../SPOOLES_makeGlobalLib.patch # Fix drawTree
+patch Make.inc ../SPOOLES_Make.inc.patch # Fix c compiler location
+make lib > ../spooles_make.txt 2> ../spooles_error.txt
+cp spooles.a $PROGSDIR/lib
+mkdir -p $PROGSDIR/include/spooles
+find . -name '*.h' | cpio -updm $PROGSDIR/include/spooles
+cd MT/src
+make > ../../../spoolesMT_make.txt 2> ../../../spoolesMT_error.txt
+cp spoolesMT.a $PROGSDIR/lib
+cd ..
+mkdir -p $PROGSDIR/include/spooles/MT
+cp spoolesMT.h $PROGSDIR/include/spooles/MT
+cd ../..
+rm SPOOLES.2.2 -Rf
+#rm spooles.2.2.tgz
