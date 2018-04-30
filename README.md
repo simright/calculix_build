@@ -1,7 +1,7 @@
 # This is for building Calculix locally
 
 ## install SPOOLES
-./install_install_spooles
+./install_spooles
 
 ## install ARPACK
 ./install_ARPACK
