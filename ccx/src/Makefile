@@ -1,5 +1,5 @@
 # ENVs
-CCX_VER = 2.14
+CCX_VER = 2.15
 PROGSDIR = ${HOME}/Calculix
 MY_LIB = ${PROGSDIR}/lib
 MY_INCLUDE =${PROGSDIR}/include

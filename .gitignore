@@ -1,4 +1,6 @@
 *.o
 spooles*.txt
 ARPACK*.txt
+.idea/
+
 
